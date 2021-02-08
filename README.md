@@ -87,20 +87,13 @@ const AppContent = () => {
       start()
     }
   }, [canStart]) // 👈 don't miss it!
-  
-  const handleOnStart = () => console.log('start')
-  const handleOnStop = () => console.log('stop')
-  const handleOnStepChange = () => console.log(`stepChange`)
-  
-  React.useEffect(() => {
-    eventEmitter.on('start', handleOnStart)
-    eventEmitter.on('stop', handleOnStop)
-    eventEmitter.on('stepChange', handleOnStepChange)
 
-    return () => {
-      eventEmitter.off('start', handleOnStart)
-      eventEmitter.off('stop', handleOnStop)
-      eventEmitter.off('stepChange', handleOnStepChange)
+  React.useEffect(() => {
+    eventEmitter.on('start', () => console.log('start'))
+    eventEmitter.on('stop', () => console.log('stop'))
+    eventEmitter.on('stepChange', () => console.log(`stepChange`))
+
+    return () => eventEmitter.off('*', null)
   }, [])
 
   return (
