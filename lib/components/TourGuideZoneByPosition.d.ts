@@ -13,9 +13,10 @@ interface TourGuideZoneByPositionProps {
     height?: number | string;
     shape?: Shape;
     borderRadiusObject?: BorderRadiusObject;
+    borderRadius:borderRadius,
     containerStyle?: StyleProp<ViewStyle>;
     keepTooltipPosition?: boolean;
     tooltipBottomOffset?: number;
 }
-export declare const TourGuideZoneByPosition: ({ text,isTourGuide, zone, width, height, top, left, right, bottom, shape, containerStyle, keepTooltipPosition, tooltipBottomOffset, borderRadiusObject, }: TourGuideZoneByPositionProps) => JSX.Element | null;
+export declare const TourGuideZoneByPosition: ({ borderRadius,text,isTourGuide, zone, width, height, top, left, right, bottom, shape, containerStyle, keepTooltipPosition, tooltipBottomOffset, borderRadiusObject, }: TourGuideZoneByPositionProps) => JSX.Element | null;
 export {};
